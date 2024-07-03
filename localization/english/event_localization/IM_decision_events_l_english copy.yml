@@ -1,0 +1,25 @@
+﻿l_english:
+ im_magic.0001.t: "The Path of Magic"
+ im_magic.0001.desc: "You have decided to pursue the dangerous path of magic. How will you approach your studies?"
+ im_magic.0001.a: "Purchase arcane tomes (Costs 100 gold)"
+ im_magic.0001.a.tt: "A safer but costly option."
+ im_magic.0001.b: "Experiment on your own"
+ im_magic.0001.b.tt: "A risky but free option."
+ im_magic.0001.c: "On second thought, this seems too dangerous"
+ 
+ im_magic.0002.t: "Studying the Arcane Tomes"
+ im_magic.0002.desc: "You spend weeks poring over the ancient magical texts you've acquired..."
+ im_magic.0002.a: "Let's see if I've learned anything..."
+ 
+ im_magic.0003.t: "Dangerous Experiments"
+ im_magic.0003.desc: "You spend weeks conducting risky magical experiments..."
+ im_magic.0003.a: "Time to test my newfound powers..."
+ 
+ im_magic.0004.t: "The Results of Your Studies"
+ im_magic.0004.desc: "After weeks of intense study and practice, you attempt to channel the Winds of Magic..."
+ im_magic.0004.success.desc: "You feel the Winds of Magic flow through you with incredible power. You have not only mastered the basics but show remarkable talent!"
+ im_magic.0004.partial_success.desc: "You manage to channel the Winds of Magic, albeit with some difficulty. You've learned the basics of a magical lore."
+ im_magic.0004.failure.desc: "Despite your efforts, you fail to channel the Winds of Magic. The failure weighs heavily on your mind."
+ im_magic.0004.severe_failure.desc: "As you attempt to channel the Winds of Magic, the energies backfire, causing you physical harm."
+ im_magic.0004.catastrophic_failure.desc: "The magical energies spiral out of control, unleashing devastating power upon you!"
+ im_magic.0004.a: "Such is the path of magic..."

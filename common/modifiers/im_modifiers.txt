@@ -1,0 +1,8 @@
+﻿# Modifiers
+arcane_book_study = {
+    learning = 1
+}
+
+toutored_by_mage = {
+    learning = 1
+}

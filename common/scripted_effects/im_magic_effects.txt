@@ -1,0 +1,44 @@
+﻿lore_life_xp_effect = {
+	if = {
+		limit = { has_trait = lore_life }
+		add_trait_xp = {
+			trait = lore_life
+			value = {
+				integer_range = {
+					min = $MIN$
+					max = $MAX$
+				}
+			}
+		}
+	}
+}
+
+lore_beasts_xp_effect = {
+	if = {
+		limit = { has_trait = lore_beasts }
+		add_trait_xp = {
+			trait = lore_beasts
+			value = {
+				integer_range = {
+					min = $MIN$
+					max = $MAX$
+				}
+			}
+		}
+	}
+}
+
+lore_heavens_xp_effect = {
+	if = {
+		limit = { has_trait = lore_heavens }
+		add_trait_xp = {
+			trait = lore_heavens
+			value = {
+				integer_range = {
+					min = $MIN$
+					max = $MAX$
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,179 @@
+﻿# Event for learning magic
+namespace = im_magic
+
+# Main event for learning magic
+im_magic.0001 = {
+    type = character_event
+    title = im_magic.0001.t
+    desc = im_magic.0001.desc
+    #theme = magic
+    
+    option = {
+        name = im_magic.0001.a
+        custom_tooltip = im_magic.0001.a.tt
+        trigger_event = { id = im_magic.0002 days = 30 }
+        remove_short_term_gold = 100
+        add_character_modifier = {
+            modifier = arcane_book_study
+            days = 31
+        }
+    }
+    
+    option = {
+        name = im_magic.0001.b
+        custom_tooltip = im_magic.0001.b.tt
+        trigger_event = { id = im_magic.0003 days = 30 }
+    }
+    
+    option = {
+        name = im_magic.0001.c
+    }
+}
+
+# Event for learning from books
+im_magic.0002 = {
+    type = character_event
+    title = im_magic.0002.t
+    desc = im_magic.0002.desc
+    #theme = magic
+    
+    immediate = {
+        set_variable = {
+            name = duel_value
+            value = learning
+        }
+    }
+    
+    option = {
+        name = im_magic.0002.a
+        trigger_event = { id = im_magic.0004 }
+    }
+}
+
+# Event for experimenting on your own
+im_magic.0003 = {
+    type = character_event
+    title = im_magic.0003.t
+    desc = im_magic.0003.desc
+    #theme = magic
+    
+    
+    option = {
+        name = im_magic.0003.a
+        trigger_event = { id = im_magic.0004 }
+    }
+}
+
+# Event for magic learning outcome
+im_magic.0004 = {
+    type = character_event
+    title = im_magic.0004.t
+    desc = im_magic.0004.desc
+    #theme = magic
+
+    immediate = {
+            if = {
+                limit = {
+                    any_courtier = {
+                        has_relation_ward = root
+                        OR = {
+                            has_trait = lore_life
+                            has_trait = lore_beasts
+                            has_trait = lore_heavens
+                        }
+                    }
+                }
+                add_character_modifier = {
+                    modifier = toutored_by_mage
+                    days = 1
+                }
+            }
+    }
+    
+    option = {
+        name = im_magic.0004.a
+        duel = {
+            skill = learning
+            value = extremely_high_skill_rating
+            5 = { # Great success
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 1
+                }
+                send_interface_toast = {
+                    title = im_magic.0004.success.desc
+                    left_icon = root
+                }
+                remove_trait = magic_potential
+                random_list = {
+                    33 = { add_trait = lore_life }
+                    33 = { add_trait = lore_beasts }
+                    33 = { add_trait = lore_heavens }
+                }
+            }
+            10 = { # Success
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = 0.7
+                }
+                send_interface_toast = {
+                    title = im_magic.0004.partial_success.desc
+                    left_icon = root
+                }
+                remove_trait = magic_potential
+                random_list = {
+                    33 = { add_trait = lore_life }
+                    33 = { add_trait = lore_beasts }
+                    33 = { add_trait = lore_heavens }
+                }
+                add_stress = minor_stress_gain
+            }
+            40 = { # Failure
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -0.5
+                }
+                send_interface_toast = {
+                    title = im_magic.0004.failure.desc
+                    left_icon = root
+                }
+                add_stress = medium_stress_gain
+            }
+            35 = { # Severe failure
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -0.8
+                }
+                send_interface_toast = {
+                    title = im_magic.0004.severe_failure.desc
+                    left_icon = root
+                }
+                increase_wounds_effect = { REASON = magic }
+                add_stress = major_stress_gain
+            }
+            15 = { # Catastrophic failure
+                compare_modifier = {
+                    value = scope:duel_value
+                    multiplier = -1.0
+                }
+                send_interface_toast = {
+                    title = im_magic.0004.catastrophic_failure.desc
+                    left_icon = root
+                }
+                random_list = {
+                    60 = { 
+                        add_trait = maimed
+                        add_stress = massive_stress_gain
+                        custom_tooltip = im_magic.0004.catastrophic_failure.maimed_tt
+                    }
+                    40 = { 
+                        death = { 
+                            death_reason = death_magic_backfire
+                        }
+                        custom_tooltip = im_magic.0004.catastrophic_failure.death_tt
+                    }
+                }
+            }
+        }
+    }
+}

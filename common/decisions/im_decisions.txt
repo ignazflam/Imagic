@@ -1,0 +1,21 @@
+﻿# Decision to learn magic
+decision_learn_magic = {
+    picture = "gfx/interface/illustrations/decisions/decision_learn_magic.dds"
+
+    cooldown = { days = 31}
+    is_shown = {
+        has_trait = magic_potential
+    }
+    
+    effect = {
+        trigger_event = {
+            id = im_magic.0001
+        }
+    }
+
+    ai_will_do = {
+		base = 10
+	}
+	ai_check_interval = 60
+
+}

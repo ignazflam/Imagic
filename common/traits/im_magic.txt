@@ -1,0 +1,304 @@
+﻿lore_life = {
+    category = lifestyle
+    # modifiers
+    prowess = 1
+    health = 0.5
+
+    # Loc
+    name = {
+        first_valid = {
+            # Grandmaster Lore Life
+            triggered_desc = {
+                trigger = {
+                    exists = this
+                    has_trait_xp = {
+                        trait = lore_life
+                        value >= 100
+                    }
+                }
+                desc = trait_lore_life_4
+            }
+            # Master Lore Life
+            triggered_desc = {
+                trigger = { 
+                    exists = this
+                    has_trait_xp = {
+                        trait = lore_life
+                        value >= 67
+                    }
+                }
+                desc = trait_lore_life_3
+            }
+            # Adept Lore Life
+            triggered_desc = {
+                trigger = { 
+                    exists = this
+                    has_trait_xp = {
+                        trait = lore_life
+                        value >= 33
+                    }
+                }
+                desc = trait_lore_life_2
+            }
+            # Beginner Lore Life
+            triggered_desc = {
+                trigger = { 
+                    exists = this
+                    has_trait_xp = {
+                        trait = lore_life
+                        value < 33
+                    }
+                }
+                desc = trait_lore_life_1
+            }
+            # Lore Life
+            desc = trait_lore_life
+        }
+    }
+
+    ruler_designer_cost = 30
+
+    desc = {
+        first_valid = {
+            triggered_desc = {
+                trigger = {
+                    NOT = { exists = this }
+                }
+                desc = trait_lore_life_desc
+            }
+            desc = trait_lore_life_character_desc
+        }
+    }
+
+    # tracks
+    track = {
+        33 = { # adept
+            health = 0.5
+            advantage = 1
+        }
+        66 = { # master
+            character_travel_safety = 10
+            development_growth = 0.1
+        }
+        100 = { # grandmaster
+            advantage = 2
+        }
+    }
+}
+
+lore_beasts = {
+    category = lifestyle
+    # modifiers
+	character_travel_speed = 5
+    character_travel_safety = 5
+
+
+    # Loc
+    name = {
+        first_valid = {
+            # Grandmaster Lore Beasts
+            triggered_desc = {
+                trigger = {
+                    exists = this
+                    has_trait_xp = {
+                        trait = lore_beasts
+                        value >= 100
+                    }
+                }
+                desc = trait_lore_beasts_4
+            }
+            # Master Lore Beasts
+            triggered_desc = {
+                trigger = { 
+                    exists = this
+                    has_trait_xp = {
+                        trait = lore_beasts
+                        value >= 67
+                    }
+                }
+                desc = trait_lore_beasts_3
+            }
+            # Adept Lore Beasts
+            triggered_desc = {
+                trigger = { 
+                    exists = this
+                    has_trait_xp = {
+                        trait = lore_beasts
+                        value >= 33
+                    }
+                }
+                desc = trait_lore_beasts_2
+            }
+            # Beginner Lore Beasts
+            triggered_desc = {
+                trigger = { 
+                    exists = this
+                    has_trait_xp = {
+                        trait = lore_beasts
+                        value < 33
+                    }
+                }
+                desc = trait_lore_beasts_1
+            }
+            # Lore Beasts
+            desc = trait_lore_beasts
+        }
+    }
+
+    ruler_designer_cost = 30
+
+    desc = {
+        first_valid = {
+            triggered_desc = {
+                trigger = {
+                    NOT = { exists = this }
+                }
+                desc = trait_lore_beasts_desc
+            }
+            desc = trait_lore_beasts_character_desc
+        }
+    }
+
+    # tracks
+    track = {
+        33 = { # adept
+			hostile_scheme_power_mult = 0.1
+            prowess = 3
+        }
+        66 = { # master
+			advantage = 2
+            prowess = 6
+        }
+        100 = { # grandmaster
+            advantage = 4
+			prowess = 3
+        }
+    }
+}
+
+lore_heavens = {
+    category = lifestyle
+    # modifiers
+	learning = 1
+    intrigue = 1
+
+
+    # Loc
+    name = {
+        first_valid = {
+            # Grandmaster Lore Heavens
+            triggered_desc = {
+                trigger = {
+                    exists = this
+                    has_trait_xp = {
+                        trait = lore_heavens
+                        value >= 100
+                    }
+                }
+                desc = trait_lore_heavens_4
+            }
+            # Master Lore Heavens
+            triggered_desc = {
+                trigger = { 
+                    exists = this
+                    has_trait_xp = {
+                        trait = lore_heavens
+                        value >= 67
+                    }
+                }
+                desc = trait_lore_heavens_3
+            }
+            # Adept Lore Heavens
+            triggered_desc = {
+                trigger = { 
+                    exists = this
+                    has_trait_xp = {
+                        trait = lore_heavens
+                        value >= 33
+                    }
+                }
+                desc = trait_lore_heavens_2
+            }
+            # Beginner Lore Heavens
+            triggered_desc = {
+                trigger = { 
+                    exists = this
+                    has_trait_xp = {
+                        trait = lore_heavens
+                        value < 33
+                    }
+                }
+                desc = trait_lore_heavens_1
+            }
+            # Lore Heavens
+            desc = trait_lore_heavens
+        }
+    }
+
+    ruler_designer_cost = 30
+
+    desc = {
+        first_valid = {
+            triggered_desc = {
+                trigger = {
+                    NOT = { exists = this }
+                }
+                desc = trait_lore_heavens_desc
+            }
+            desc = trait_lore_heavens_character_desc
+        }
+    }
+
+    # tracks
+    track = {
+        33 = { # adept
+			intrigue = 1
+            prowess = 1
+        }
+        66 = { # master
+            prowess = 2
+			character_travel_speed = 5 
+        }
+        100 = { # grandmaster
+            advantage = 2
+			character_travel_safety = 5
+        }
+    }
+}
+
+magic_potential = {
+    # Basic information
+    is_good = yes
+    inheritable = yes
+    genetic = yes
+    birth = 1
+	random_creation = 1
+
+	desc = {
+		first_valid = {
+			triggered_desc = {
+				trigger = {
+					NOT = { exists = this }
+				}
+				desc = trait_magic_potential_desc
+			}
+			desc = trait_magic_potential_character_desc
+		}
+	}
+
+    # Genetic trait properties
+    
+    congenital = yes
+    opposite = no
+
+    # Trait effects
+    potential = {
+        always = yes
+    }
+    modifier = {
+
+    }
+
+    
+    chance = 1.0
+}

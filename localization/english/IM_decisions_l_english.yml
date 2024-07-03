@@ -1,0 +1,7 @@
+﻿l_english:
+ decision_learn_magic: "Learn Magic"
+ decision_learn_magic_desc: "Attempt to harness the Winds of Magic and become a wizard."
+ decision_learn_magic_tooltip: "Embark on a perilous journey to master the arcane arts. Success could grant you immense power, but failure may bring dire consequences."
+ decision_learn_magic_confirm: "Are you sure you wish to proceed?"
+ death_magic_backfire: "Died of sudden combustion "
+ 
