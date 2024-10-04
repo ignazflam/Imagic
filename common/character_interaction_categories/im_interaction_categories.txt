@@ -1,0 +1,4 @@
+﻿interaction_category_magic = {
+	index = 13
+	desc = "MAGIC_ACTIONS"
+}

@@ -1,0 +1,72 @@
+﻿lore_life_heal_wound_interaction = {
+    category = interaction_category_magic
+    common_interaction = yes
+    
+    icon = "gfx/interface/illustrations/your_custom_heal_icon.dds"
+    is_shown = { 
+        scope:actor = { 
+            has_trait = lore_life
+        } 
+    }
+    
+    is_valid = {
+        scope:recipient = {
+            OR = {
+                has_trait = wounded
+            }
+        }
+    }
+
+    cost = {
+        piety = 100
+    }
+    
+    
+    is_highlighted = {
+        always = no
+    }
+    
+    ai_potential = {
+        has_trait = wounded
+    }
+    
+    desc = lore_life_heal_wound_interaction_desc
+    
+    send_option = {
+        is_shown = {
+            scope:recipient = {
+                has_trait = wounded
+            }
+        }
+        localization = lore_life_heal
+    }
+        
+    cooldown = {
+        days = 1
+    }
+    
+    
+    ai_frequency = 12
+    ai_will_do = {
+        base = 10
+    }
+    
+    can_send = {
+        always = yes
+    }
+    
+    on_accept = {
+        scope:actor = {
+            lore_life_xp_effect = {
+            MIN = 1
+            MAX = 5
+            }
+        }
+        scope:recipient = {
+            remove_trait = wounded_1
+            remove_trait = wounded_2
+            remove_trait = wounded_3
+        }
+    
+    }
+}

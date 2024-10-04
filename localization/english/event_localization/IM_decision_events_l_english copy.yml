@@ -23,3 +23,5 @@
  im_magic.0004.severe_failure.desc: "As you attempt to channel the Winds of Magic, the energies backfire, causing you physical harm."
  im_magic.0004.catastrophic_failure.desc: "The magical energies spiral out of control, unleashing devastating power upon you!"
  im_magic.0004.a: "Such is the path of magic..."
+ im_magic.0004.catastrophic_failure.maimed_tt: "The magical energies lead to pernament injury of your body."
+ im_magic.0004.catastrophic_failure.death_tt: "The magical energies lead to your death."

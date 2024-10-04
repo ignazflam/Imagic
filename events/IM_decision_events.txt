@@ -6,7 +6,7 @@ im_magic.0001 = {
     type = character_event
     title = im_magic.0001.t
     desc = im_magic.0001.desc
-    #theme = magic
+    theme = learning
     
     option = {
         name = im_magic.0001.a
@@ -35,7 +35,7 @@ im_magic.0002 = {
     type = character_event
     title = im_magic.0002.t
     desc = im_magic.0002.desc
-    #theme = magic
+    theme = learning
     
     immediate = {
         set_variable = {
@@ -55,7 +55,7 @@ im_magic.0003 = {
     type = character_event
     title = im_magic.0003.t
     desc = im_magic.0003.desc
-    #theme = magic
+    theme = learning
     
     
     option = {
@@ -69,7 +69,7 @@ im_magic.0004 = {
     type = character_event
     title = im_magic.0004.t
     desc = im_magic.0004.desc
-    #theme = magic
+    theme = learning
 
     immediate = {
             if = {
@@ -104,7 +104,6 @@ im_magic.0004 = {
                     title = im_magic.0004.success.desc
                     left_icon = root
                 }
-                remove_trait = magic_potential
                 random_list = {
                     33 = { add_trait = lore_life }
                     33 = { add_trait = lore_beasts }
@@ -120,7 +119,6 @@ im_magic.0004 = {
                     title = im_magic.0004.partial_success.desc
                     left_icon = root
                 }
-                remove_trait = magic_potential
                 random_list = {
                     33 = { add_trait = lore_life }
                     33 = { add_trait = lore_beasts }
@@ -164,13 +162,11 @@ im_magic.0004 = {
                     60 = { 
                         add_trait = maimed
                         add_stress = massive_stress_gain
-                        custom_tooltip = im_magic.0004.catastrophic_failure.maimed_tt
                     }
                     40 = { 
                         death = { 
-                            death_reason = death_magic_backfire
+                            death_reason = death_burned
                         }
-                        custom_tooltip = im_magic.0004.catastrophic_failure.death_tt
                     }
                 }
             }

@@ -162,7 +162,7 @@ lore_beasts = {
     # tracks
     track = {
         33 = { # adept
-			hostile_scheme_power_mult = 0.1
+            owned_hostile_scheme_success_chance_add = 10
             prowess = 3
         }
         66 = { # master
@@ -268,11 +268,13 @@ lore_heavens = {
 
 magic_potential = {
     # Basic information
-    is_good = yes
-    inheritable = yes
+
     genetic = yes
-    birth = 1
-	random_creation = 1
+    physical = yes
+    birth = 0.5
+	random_creation = 0.5
+
+    ruler_designer_cost = 20
 
 	desc = {
 		first_valid = {
@@ -286,19 +288,10 @@ magic_potential = {
 		}
 	}
 
-    # Genetic trait properties
-    
-    congenital = yes
-    opposite = no
 
     # Trait effects
     potential = {
         always = yes
     }
-    modifier = {
 
-    }
-
-    
-    chance = 1.0
 }

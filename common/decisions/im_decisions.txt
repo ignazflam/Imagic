@@ -1,10 +1,18 @@
 ﻿# Decision to learn magic
 decision_learn_magic = {
-    picture = "gfx/interface/illustrations/decisions/decision_learn_magic.dds"
+    picture = {
+        reference = "gfx/interface/illustrations/decisions/decision_learn_magic.dds"
+    } 
 
-    cooldown = { days = 31}
+    cooldown = { days = 31 }
+    
     is_shown = {
         has_trait = magic_potential
+        nor = {
+            has_trait = lore_life
+            has_trait = lore_beasts
+            has_trait = lore_heavens
+        }
     }
     
     effect = {
@@ -12,10 +20,15 @@ decision_learn_magic = {
             id = im_magic.0001
         }
     }
+    ai_check_interval = 60
 
     ai_will_do = {
-		base = 10
-	}
-	ai_check_interval = 60
+        base = 10
+        modifier = {
+            factor = 2.0
+            has_trait = ambitious
+        }
+    }
+
 
 }

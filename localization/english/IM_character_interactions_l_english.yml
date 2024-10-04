@@ -1,0 +1,5 @@
+﻿l_english:
+ interaction_category_magic: "Magic"
+ lore_life_heal_wound_interaction: "Earth Blood"
+ lore_life_heal_wound_interaction_desc: "Allows a character with the Lore of Life to heal  character's wounds."
+ lore_life_heal: "Heal wounds"
