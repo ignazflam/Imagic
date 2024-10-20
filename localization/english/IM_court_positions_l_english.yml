@@ -1,0 +1,4 @@
+﻿l_english:
+ court_position_lore_life_trait: "[GetTrait('lore_life').GetName( ROOT.Char )]"
+ court_position_lore_beasts_trait: "[GetTrait('lore_beasts').GetName( ROOT.Char )]"
+ court_position_lore_heaven_trait: "[GetTrait('lore_heavens').GetName( ROOT.Char )]"

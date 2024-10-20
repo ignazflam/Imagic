@@ -1,8 +1,9 @@
 ﻿lore_life_heal_wound_interaction = {
     category = interaction_category_magic
     common_interaction = yes
-    
+
     icon = "gfx/interface/illustrations/your_custom_heal_icon.dds"
+    
     is_shown = { 
         scope:actor = { 
             has_trait = lore_life
@@ -12,7 +13,9 @@
     is_valid = {
         scope:recipient = {
             OR = {
-                has_trait = wounded
+                has_trait = wounded_1
+                has_trait = wounded_2
+                has_trait = wounded_3
             }
         }
     }
@@ -20,22 +23,86 @@
     cost = {
         piety = 100
     }
-    
-    
+
     is_highlighted = {
         always = no
     }
     
     ai_potential = {
-        has_trait = wounded
+        AND =  {
+            has_trait = lore_life
+            is_adult = yes
+        }
     }
-    
+
+    ai_targets = {
+        ai_recipients = family
+        max = 5
+    }
+    ai_targets = {
+        ai_recipients = courtiers
+        max = 5
+    }
+    ai_targets = {
+        ai_recipients = vassals
+        max = 5
+    }
+    ai_targets = {
+        ai_recipients = neighboring_rulers
+        max = 2
+    }
+
+    ai_target_quick_trigger = {
+        scope:recipient = {
+            OR = {
+                has_trait = wounded_1
+                has_trait = wounded_2
+                has_trait = wounded_3
+            }
+        }
+    }
+
+    ai_frequency = 12
+
+    ai_will_do = {
+        base = 10
+
+        modifier = {
+            add = 20
+            scope:recipient = {
+                is_family = yes
+            }
+        }
+        modifier = {
+            add = 15
+            scope:recipient = {
+                is_vassal_of = scope:actor
+            }
+        }
+        modifier = {
+            add = -10
+            scope:recipient = {
+                is_rival = yes
+            }
+        }
+        modifier = {
+            add = -20
+            scope:recipient = {
+                is_at_war_with = scope:actor
+            }
+        }
+    }
+
     desc = lore_life_heal_wound_interaction_desc
-    
-    send_option = {
+
+    confirm = {
         is_shown = {
             scope:recipient = {
-                has_trait = wounded
+                OR = {
+                    has_trait = wounded_1
+                    has_trait = wounded_2
+                    has_trait = wounded_3
+                }
             }
         }
         localization = lore_life_heal
@@ -44,22 +111,16 @@
     cooldown = {
         days = 1
     }
-    
-    
-    ai_frequency = 12
-    ai_will_do = {
-        base = 10
-    }
-    
+
     can_send = {
         always = yes
     }
-    
+
     on_accept = {
         scope:actor = {
             lore_life_xp_effect = {
-            MIN = 1
-            MAX = 5
+                MIN = 1
+                MAX = 5
             }
         }
         scope:recipient = {
@@ -67,6 +128,5 @@
             remove_trait = wounded_2
             remove_trait = wounded_3
         }
-    
     }
 }

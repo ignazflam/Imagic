@@ -324,16 +324,6 @@ travel_danger_events.6000 = { #Animal attack
 				custom_tooltip = IM_lore_beasts_success_tt
 				hidden_effect = {
 					add_prestige = major_prestige_gain
-					if = {
-						limit = { exists = scope:beast_victim }
-						scope:beast_victim = { save_opinion = { target = root value = 15 } }
-					}
-					current_travel_plan = { 
-						random_entourage_character = {
-							limit = { is_pool_commander = yes }
-							add_commander_trait = wilderness_warrior_commander_trait
-						}
-					}
 				}
 			}
 			30 = { # Partially calm the animal
