@@ -16,3 +16,16 @@
   IM_travel_danger_events.6030.d: "Use Lore of Life to sustain your group."
   IM_travel_danger_events.6030.d.success: "Using your mastery of Life Magic, you successfully sustain your crew with magically created food. They are grateful, and no further issues arise."
   IM_travel_danger_events.6030.d.failure:  "You attempt to use your Life Magic to sustain the crew, but the magic overwhelms you. You manage to sustain them, but the effort leaves you severely stressed."
+  IM_travel_danger_events.3003.d: "Azyr, Clear My Path"
+  IM_travel_danger_events.3003.d.magic_success_tt: "Azyr parts the storm, clearing the way!"
+  IM_travel_danger_events.3003.d.magic_partial_tt: "Azyr calms the storm, but a delay is needed."
+  IM_travel_danger_events.3003.d.magic_fail_tt: "Azyr’s power falters, worsening the storm."
+  IM_travel_danger_events.3003.d.tooltip: "Attempt to call upon Azyr to clear the storm and proceed swiftly. Success is not guaranteed, and failure could delay your travel even further."
+  IM_hunt.4007.g: "Use the Lore of Beasts to Calm the Animal"
+  IM_hunt.4007.g.tooltip: "Attempt to calm the wild animal using the Lore of Beasts."
+  IM_hunt.4007.g.success_tt: "You soothe the beast, allowing it to peacefully retreat."
+  IM_hunt.4007.g.partial_tt: "The animal calms somewhat but remains uneasy, and you feel the strain."
+  IM_hunt.4007.g.fail_tt: "The animal is enraged by your attempt, attacking with fury!"
+
+
+
