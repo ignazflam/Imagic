@@ -132,7 +132,7 @@ im_magic.0004 = {
                     33 = { 
                         modifier = {
                             add = 15
-                            has_trait = Wrathful
+                            has_trait = wrathful
                         }
                         add_trait = lore_beasts
                     }
