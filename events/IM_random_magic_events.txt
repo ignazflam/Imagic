@@ -1,0 +1,24 @@
+﻿# Event for learning magic
+namespace = im_random_magic_events
+
+# Main event for learning magic
+
+im_random_magic_events.0001 = {
+    hidden = yes
+
+    immediate = {
+        random_list = {
+            10 = { # Positive outcome - beneficial magic
+
+                    add_prestige = 50
+            }
+            70 = { # Neutral outcome - no major effect
+            }
+            10 = { # Negative outcome - magical backfire
+                scope:actor = {
+                    add_stress = 50
+                }
+            }
+        }
+    }
+}

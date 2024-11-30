@@ -123,9 +123,26 @@ im_magic.0004 = {
                     left_icon = root
                 }
                 random_list = {
-                    33 = { add_trait = lore_life }
-                    33 = { add_trait = lore_beasts }
-                    33 = { add_trait = lore_heavens }
+                    33 = {
+                        modifier = {
+                            add = 15
+                            has_trait = calm
+                        }
+                        add_trait = lore_life }
+                    33 = { 
+                        modifier = {
+                            add = 15
+                            has_trait = Wrathful
+                        }
+                        add_trait = lore_beasts
+                    }
+                    33 = {
+                        modifier = {
+                            add = 15
+                            has_trait = fickle
+                        }
+                        add_trait = lore_heavens 
+                    }
                 }
             }
             10 = { # Success
@@ -138,9 +155,26 @@ im_magic.0004 = {
                     left_icon = root
                 }
                 random_list = {
-                    33 = { add_trait = lore_life }
-                    33 = { add_trait = lore_beasts }
-                    33 = { add_trait = lore_heavens }
+                    33 = {
+                        modifier = {
+                            add = 15
+                            has_trait = calm
+                        }
+                        add_trait = lore_life }
+                    33 = { 
+                        modifier = {
+                            add = 15
+                            has_trait = wrathful
+                        }
+                        add_trait = lore_beasts
+                    }
+                    33 = {
+                        modifier = {
+                            add = 15
+                            has_trait = fickle
+                        }
+                        add_trait = lore_heavens 
+                    }
                 }
                 add_stress = minor_stress_gain
             }

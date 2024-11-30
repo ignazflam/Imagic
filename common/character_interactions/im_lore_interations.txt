@@ -1,8 +1,8 @@
 ﻿lore_life_heal_wound_interaction = {
-    category = interaction_category_magic
+    category = interaction_category_uncategorized
     common_interaction = yes
 
-    icon = "gfx/interface/illustrations/your_custom_heal_icon.dds"
+    icon = "gfx/interface/icons/traits/lore_life.dds"
     
     is_shown = { 
         scope:actor = { 
@@ -52,26 +52,16 @@
         max = 2
     }
 
-    ai_target_quick_trigger = {
-        scope:recipient = {
-            OR = {
-                has_trait = wounded_1
-                has_trait = wounded_2
-                has_trait = wounded_3
-            }
-        }
-    }
-
     ai_frequency = 12
 
     ai_will_do = {
         base = 10
 
         modifier = {
-            add = 20
             scope:recipient = {
-                is_family = yes
+                is_close_family_of = scope:actor
             }
+            add = 20
         }
         modifier = {
             add = 15
@@ -82,7 +72,7 @@
         modifier = {
             add = -10
             scope:recipient = {
-                is_rival = yes
+                has_relation_rival = scope:actor
             }
         }
         modifier = {
@@ -95,18 +85,6 @@
 
     desc = lore_life_heal_wound_interaction_desc
 
-    confirm = {
-        is_shown = {
-            scope:recipient = {
-                OR = {
-                    has_trait = wounded_1
-                    has_trait = wounded_2
-                    has_trait = wounded_3
-                }
-            }
-        }
-        localization = lore_life_heal
-    }
         
     cooldown = {
         days = 1
@@ -123,10 +101,14 @@
                 MAX = 5
             }
         }
+        hidden_effect = {
+			scope:actor = { trigger_event = im_random_magic_events.0001}
+		}
         scope:recipient = {
             remove_trait = wounded_1
             remove_trait = wounded_2
             remove_trait = wounded_3
         }
+          
     }
 }
