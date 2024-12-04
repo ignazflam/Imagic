@@ -1,8 +1,8 @@
 ﻿lore_life_heal_wound_interaction = {
-    category = interaction_category_uncategorized
+    category = interaction_category_religion
     common_interaction = yes
 
-    icon = "gfx/interface/icons/traits/lore_life.dds"
+    icon = lore_life
     
     is_shown = { 
         scope:actor = { 
@@ -110,5 +110,54 @@
             remove_trait = wounded_3
         }
           
+    }
+}
+
+lore_heavens_first_amul_interaction = {
+    category = interaction_category_religion
+    common_interaction = yes
+
+    icon = lore_heavens
+    desc = im_cast_first_portent_of_amul_desc
+
+
+    is_shown = { 
+        scope:actor = { 
+            has_trait = lore_heavens
+        } 
+        scope:actor = scope:recipient
+    }
+
+    cost = {
+        piety = 100
+    }
+
+    on_accept = {
+        scope:actor = {
+            add_character_modifier = {
+                modifier = first_portent_of_amul_modifier
+                days = 7
+            }
+            lore_heavens_xp_effect = {
+                MIN = 1
+                MAX = 5
+            }
+            hidden_effect = {
+                 trigger_event = im_random_magic_events.0001
+            }
+            # Notify the player
+            send_interface_toast = {
+                title = first_portent_of_amul_cast_success
+                left_icon = ROOT
+            }
+        }
+    }
+
+    cooldown = {
+        days = 7
+    }
+
+    ai_will_do = {
+        base = 10 
     }
 }

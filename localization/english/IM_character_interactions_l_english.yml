@@ -1,5 +1,9 @@
 ﻿l_english:
- interaction_category_magic: "Magic"
  lore_life_heal_wound_interaction: "Earth Blood"
  lore_life_heal_wound_interaction_desc: "Allows a character with the Lore of Life to heal  character's wounds."
  lore_life_heal: "Heal wounds"
+ im_cast_first_portent_of_amul_title: "Cast First Portent of Amul"
+ lore_heavens_first_amul_interaction: "First Portent of Amul"
+ im_cast_first_portent_of_amul_desc: "By aligning with the celestial patterns, you enhance your luck and foresight, improving your chances in upcoming endeavors."
+ first_portent_of_amul_cast_success: "You feel the celestial energies align in your favor!"
+

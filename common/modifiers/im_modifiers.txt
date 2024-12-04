@@ -1,8 +1,45 @@
 ﻿# Modifiers
 arcane_book_study = {
     learning = 1
+    icon = learning_positive
 }
 
 toutored_by_mage = {
     learning = 1
+    icon = learning_positive
+}
+
+witchery_effect = {
+    development_growth_modifier = -0.1
+    supply_limit = -5
+    icon = county_modifier_development_negative
+}
+
+rupture_effect = {
+    health = -0.5
+    icon = health_negative
+}
+
+horripilation_effect = {
+    attraction_opinion = -10
+    icon = health_negative
+}
+
+wyrdlight_effect = {
+    general_opinion = -5
+    icon = county_modifier_opinion_negative
+}
+
+mental_block_effect = {
+    learning = -2
+    icon = learning_negative
+}
+
+first_portent_of_amul_modifier = {
+    diplomacy = 2
+    martial = 2
+    stewardship = 2
+    intrigue = 2
+    learning = 2
+    icon = magic_positive
 }

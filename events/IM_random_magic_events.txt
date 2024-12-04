@@ -1,24 +1,112 @@
-﻿# Event for learning magic
+﻿# Event for handling Minor Chaos Manifestation
 namespace = im_random_magic_events
-
-# Main event for learning magic
 
 im_random_magic_events.0001 = {
     hidden = yes
-
     immediate = {
         random_list = {
-            10 = { # Positive outcome - beneficial magic
-
-                    add_prestige = 50
-            }
-            70 = { # Neutral outcome - no major effect
-            }
-            10 = { # Negative outcome - magical backfire
-                scope:actor = {
-                    add_stress = 50
+            # 10 = { # 01-10 Witchery
+            #     # Apply Witchery effect to current location
+            #     scope:location = {
+            #         add_province_modifier = {
+            #             modifier = witchery_effect
+            #             days = 30 # Duration in days
+            #         }
+            #     }
+            #     # Send a short notification
+            #     send_interface_toast = {
+            #         title = magic_effect_witchery
+            #         left_icon = ROOT
+            #     }
+            # }
+            10 = { # 11-20 Rupture
+                # Apply a temporary health penalty
+                add_character_modifier = {
+                    modifier = rupture_effect
+                    days = 7 # Duration in days
+                }
+                send_interface_toast = {
+                    title = magic_effect_rupture
+                    left_icon = ROOT
                 }
             }
+            10 = { # 21-30 Breath of Chaos
+                # Increase stress due to unsettling wind
+                stress_impact = {
+			        base = medium_stress_impact_gain
+                }
+                send_interface_toast = {
+                    title = magic_effect_breath_of_chaos
+                    left_icon = ROOT
+                }
+            }
+            10 = { # 31-40 Horripilation
+                add_character_modifier = {
+                    modifier = horripilation_effect
+                    days = 10 # Duration in days
+                }
+                send_interface_toast = {
+                    title = magic_effect_horripilation
+                    left_icon = ROOT
+                }
+            }
+            10 = { # 41-50 Wyrdlight
+                add_character_modifier = {
+                    modifier = wyrdlight_effect
+                    days = 10 # Duration in days
+                }
+                send_interface_toast = {
+                    title = magic_effect_wyrdlight
+                    left_icon = ROOT
+                }
+            }
+            10 = { # 51-60 Unnatural Aura
+                # Affect animal-related aspects (e.g., loss of hunting dog)
+                if = {        
+                    limit = { has_character_modifier = dog_story_modifier }
+                    remove_dog_story_modifiers_effect = yes
+                    remove_dog_name_effect = yes
+                }
+                send_interface_toast = {
+                    title = magic_effect_unnatural_aura
+                    left_icon = ROOT
+                }
+            }
+            10 = { # 61-70 Hauntetic
+                # Gain stress due to ghostly voices
+                stress_impact = {
+			        base = medium_stress_impact_gain
+                }
+                send_interface_toast = {
+                    title = magic_effect_hauntetic
+                    left_icon = ROOT
+                }
+            }
+            10 = { # 71-80 Aethyric Shock
+                increase_wounds_effect = { REASON = magic }
+                send_interface_toast = {
+                    title = magic_effect_aethyric_shock
+                    left_icon = ROOT
+                }
+            }
+            10 = { # 81-90 Mental Block
+                add_character_modifier = {
+                    modifier = mental_block_effect
+                    days = 60
+                }
+                send_interface_toast = {
+                    title = magic_effect_mental_block
+                    left_icon = ROOT
+                }
+            }
+            # 5 = { # 96-00 Unlucky
+            #     # Trigger the major chaos manifestation event
+            #     trigger_event = im_random_magic_events.0002
+            #     send_interface_toast = {
+            #         title = magic_effect_unlucky
+            #         left_icon = ROOT
+            #     }
+            #}
         }
     }
 }

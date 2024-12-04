@@ -4,3 +4,16 @@
  decision_learn_magic_tooltip: "Embark on a perilous journey to master the arcane arts. Success could grant you immense power, but failure may bring dire consequences."
  decision_learn_magic_confirm: "Are you sure you wish to proceed?"
  death_magic_backfire: "Died of sudden combustion "
+ # Magic Effect Descriptions for Toast Notifications
+ magic_effect_witchery: "Witchery: Nearby food and drink spoil mysteriously."
+ magic_effect_rupture: "Rupture: A sudden nosebleed hampers your focus."
+ magic_effect_breath_of_chaos:0 "Breath of Chaos: An unnatural wind unsettles you."
+ magic_effect_horripilation:0 "Horripilation: Your hair stands on end."
+ magic_effect_wyrdlight: "Wyrdlight: An eerie glow surrounds you."
+ magic_effect_unnatural_aura:0 "Unnatural Aura: Animals around you become spooked."
+ magic_effect_hauntetic:0 "Hauntetic: Ghostly voices whisper nearby."
+ magic_effect_aethyric_shock:0 "Aethyric Shock: A surge of magic wounds you."
+ magic_effect_mental_block:0 "Mental Block: Your mind feels clouded."
+ magic_effect_whimsy:0 "Whimsy: Unpredictable magic courses through you."
+ magic_effect_unlucky:0 "Unlucky: A major chaos manifestation occurs!"
+
