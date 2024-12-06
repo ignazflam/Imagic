@@ -145,11 +145,6 @@ lore_heavens_first_amul_interaction = {
             hidden_effect = {
                  trigger_event = im_random_magic_events.0001
             }
-            # Notify the player
-            send_interface_toast = {
-                title = first_portent_of_amul_cast_success
-                left_icon = ROOT
-            }
         }
     }
 
@@ -159,5 +154,57 @@ lore_heavens_first_amul_interaction = {
 
     ai_will_do = {
         base = 10 
+    }
+}
+
+im_lore_beasts_beast_unleashed_interaction = {
+    category = interaction_category_religion
+    common_interaction = yes
+
+    icon = lore_beasts
+    desc = im_lore_beasts_beast_unleashed_desc
+
+    is_shown = { 
+        scope:actor = { 
+            has_trait = lore_beasts
+        }
+        scope:recipient = {
+            not = {has_character_modifier = im_beast_unleashed_modifier}
+        }
+    }
+
+    is_valid = {
+        scope:recipient = {
+            not = {has_character_modifier = im_beast_unleashed_modifier}
+        }
+    }
+    cost = {
+        piety = 100
+    }
+
+    on_accept = {
+        scope:actor = {
+            # Gain experience in Lore of Beasts
+            lore_beasts_xp_effect = {
+                MIN = 1
+                MAX = 5
+            }
+            hidden_effect = {
+                # Trigger random magic events (if applicable)
+                trigger_event = im_random_magic_events.0001
+            }
+        }
+        scope:recipient = {
+            add_character_modifier = {
+                modifier = im_beast_unleashed_modifier
+                days = 14
+            }
+        }
+    }
+
+    auto_accept = yes
+
+    ai_will_do = {
+        base = 10 # AI will not use this interaction
     }
 }

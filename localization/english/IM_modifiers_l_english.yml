@@ -15,3 +15,5 @@
  wyrdlight_effect_desc: "An eerie glow surrounds you, unsettling those around you."
  mental_block_effect: "Mental Block"
  mental_block_effect_desc: "Your mind feels clouded, reducing your learning ability."
+ im_beast_unleashed_modifier: "Beast Unleashed"
+ im_beast_unleashed_modifier_desc: "You have unleashed your inner beast, gaining increased martial prowess."

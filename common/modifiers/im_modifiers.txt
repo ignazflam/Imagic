@@ -9,11 +9,11 @@ toutored_by_mage = {
     icon = learning_positive
 }
 
-witchery_effect = {
-    development_growth_modifier = -0.1
-    supply_limit = -5
-    icon = county_modifier_development_negative
-}
+# witchery_effect = {
+#     development_growth_modifier = -0.1
+#     supply_limit = -5
+#     icon = county_modifier_development_negative
+# }
 
 rupture_effect = {
     health = -0.5
@@ -42,4 +42,10 @@ first_portent_of_amul_modifier = {
     intrigue = 2
     learning = 2
     icon = magic_positive
+}
+
+im_beast_unleashed_modifier = {
+    prowess = 5                   # Increase prowess by 5
+    attraction_opinion = -10      # Decrease attraction opinion
+    icon = prowess_positive
 }
